@@ -4,7 +4,10 @@
   "schedule": [
     {
       "hour": 8,
-      "fixed_departures": [25, 55],
+      "fixed_departures": [
+        25,
+        55
+      ],
       "shuttle_service": [
         {
           "start": "8:50",
@@ -15,12 +18,20 @@
     },
     {
       "hour": 9,
-      "fixed_departures": [10, 30, 50],
+      "fixed_departures": [
+        10,
+        30,
+        50
+      ],
       "shuttle_service": []
     },
     {
       "hour": 10,
-      "fixed_departures": [0, 35, 55],
+      "fixed_departures": [
+        0,
+        35,
+        55
+      ],
       "shuttle_service": [
         {
           "start": "10:15",
@@ -36,12 +47,17 @@
     },
     {
       "hour": 11,
-      "fixed_departures": [10, 40],
+      "fixed_departures": [
+        10,
+        40
+      ],
       "shuttle_service": []
     },
     {
       "hour": 12,
-      "fixed_departures": [15],
+      "fixed_departures": [
+        15
+      ],
       "shuttle_service": [
         {
           "start": "12:45",
@@ -52,17 +68,28 @@
     },
     {
       "hour": 13,
-      "fixed_departures": [0, 30, 50],
+      "fixed_departures": [
+        0,
+        30,
+        50
+      ],
       "shuttle_service": []
     },
     {
       "hour": 14,
-      "fixed_departures": [10, 30, 50],
+      "fixed_departures": [
+        10,
+        30,
+        50
+      ],
       "shuttle_service": []
     },
     {
       "hour": 15,
-      "fixed_departures": [30, 50],
+      "fixed_departures": [
+        30,
+        50
+      ],
       "shuttle_service": [
         {
           "start": "15:00",
@@ -73,7 +100,10 @@
     },
     {
       "hour": 16,
-      "fixed_departures": [20, 40],
+      "fixed_departures": [
+        20,
+        40
+      ],
       "shuttle_service": [
         {
           "start": "16:50",
@@ -84,7 +114,10 @@
     },
     {
       "hour": 17,
-      "fixed_departures": [30, 50],
+      "fixed_departures": [
+        30,
+        50
+      ],
       "shuttle_service": [
         {
           "start": "17:00",
@@ -95,12 +128,18 @@
     },
     {
       "hour": 18,
-      "fixed_departures": [10, 30, 50],
+      "fixed_departures": [
+        10,
+        30,
+        50
+      ],
       "shuttle_service": []
     },
     {
       "hour": 19,
-      "fixed_departures": [20],
+      "fixed_departures": [
+        20
+      ],
       "shuttle_service": [
         {
           "start": "19:00",

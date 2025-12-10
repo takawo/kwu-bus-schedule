@@ -5,7 +5,7 @@ let currentRoute = 'motoyama'; // 'motoyama' または 'university'
 // スケジュールデータを読み込む
 async function loadSchedule(route = 'motoyama') {
     try {
-        const fileName = route === 'motoyama' ? 'bus_schedule.json' : 'bus_schedule_university.json';
+        const fileName = route === 'motoyama' ? 'bus_schedule_motoyama.json' : 'bus_schedule_daigaku.json';
         const response = await fetch(fileName);
         scheduleData = await response.json();
         currentRoute = route;
@@ -23,7 +23,7 @@ function updateRouteButtons() {
     const motoyamaBtn = document.getElementById('routeMotoyama');
     const universityBtn = document.getElementById('routeUniversity');
     const subtitle = document.getElementById('subtitle');
-    
+
     if (currentRoute === 'motoyama') {
         motoyamaBtn.classList.add('active');
         universityBtn.classList.remove('active');
@@ -228,9 +228,22 @@ function updateDisplay() {
 
     // シャトル運行中の場合は特別な表示
     if (shuttleStatus.active) {
+        const endTimeMinutes = timeToMinutes(shuttleStatus.endTime);
+        const minutesUntil = endTimeMinutes - current.totalMinutes;
+        const hoursUntil = Math.floor(minutesUntil / 60);
+        const minsUntil = minutesUntil % 60;
+
+        let countdownText = '';
+        if (hoursUntil > 0) {
+            countdownText = `あと ${hoursUntil}時間${minsUntil}分`;
+        } else {
+            countdownText = `あと ${minsUntil}分`;
+        }
+
         nextBusElement.innerHTML = `
-            <div class="next-bus-title">現在</div>
-            <div class="shuttle-badge">シャトル運行</div>
+            <div class="next-bus-title">次のバス<span class="shuttle-badge-inline">シャトル運行</span></div>
+            <div class="next-bus-time">${shuttleStatus.endTime} まで</div>
+            <div class="next-bus-countdown">${countdownText}</div>
         `;
     } else if (nextBus) {
         const minutesUntil = nextBus.time - current.totalMinutes;
@@ -250,28 +263,15 @@ function updateDisplay() {
         const showShuttleBadge = nextBus.type === 'shuttle' || nextBus.isInShuttleRange;
 
         nextBusElement.innerHTML = `
-            <div class="next-bus-title">次のバス</div>
+            <div class="next-bus-title">次のバス${showShuttleBadge ? '<span class="shuttle-badge-inline">シャトル運行</span>' : ''}</div>
             <div class="next-bus-time">${nextBus.displayTime}</div>
             <div class="next-bus-countdown">${countdownText}</div>
-            ${showShuttleBadge ? '<div class="shuttle-badge">シャトル運行</div>' : ''}
         `;
     } else {
         nextBusElement.innerHTML = '<div class="no-service">本日の運行は終了しました</div>';
     }
 
-    // ステータス情報（シャトル運行中は非表示）
-    const statusElement = document.getElementById('statusInfo');
-    if (shuttleStatus.active) {
-        statusElement.className = 'status-info';
-        statusElement.innerHTML = '';
-    } else {
-        statusElement.className = 'status-info';
-        statusElement.innerHTML = `
-            <div class="status-text">
-                現在、定時運行中です
-            </div>
-        `;
-    }
+    // ステータス情報は不要のため削除
 
     // 今日の運行ダイヤ
     const todaySchedule = generateTodaySchedule(current);
@@ -344,13 +344,13 @@ function setupTimeControls() {
 function setupRouteSwitch() {
     const motoyamaBtn = document.getElementById('routeMotoyama');
     const universityBtn = document.getElementById('routeUniversity');
-    
+
     motoyamaBtn.addEventListener('click', () => {
         if (currentRoute !== 'motoyama') {
             loadSchedule('motoyama');
         }
     });
-    
+
     universityBtn.addEventListener('click', () => {
         if (currentRoute !== 'university') {
             loadSchedule('university');
