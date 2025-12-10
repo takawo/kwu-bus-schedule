@@ -1,0 +1,113 @@
+{
+  "title": "大学発本山スクールバス乗り場着 運行ダイヤ",
+  "note": "「▸」記号はシャトル運行（満車になり次第出発）を示します",
+  "schedule": [
+    {
+      "hour": 8,
+      "fixed_departures": [25, 55],
+      "shuttle_service": [
+        {
+          "start": "8:50",
+          "end": "8:55",
+          "description": "シャトル運行（満車になり次第出発）"
+        }
+      ]
+    },
+    {
+      "hour": 9,
+      "fixed_departures": [10, 30, 50],
+      "shuttle_service": []
+    },
+    {
+      "hour": 10,
+      "fixed_departures": [0, 35, 55],
+      "shuttle_service": [
+        {
+          "start": "10:15",
+          "end": "10:35",
+          "description": "シャトル運行（満車になり次第出発）"
+        },
+        {
+          "start": "10:45",
+          "end": "10:55",
+          "description": "シャトル運行（満車になり次第出発）"
+        }
+      ]
+    },
+    {
+      "hour": 11,
+      "fixed_departures": [10, 40],
+      "shuttle_service": []
+    },
+    {
+      "hour": 12,
+      "fixed_departures": [15],
+      "shuttle_service": [
+        {
+          "start": "12:45",
+          "end": "13:00",
+          "description": "シャトル運行（満車になり次第出発）"
+        }
+      ]
+    },
+    {
+      "hour": 13,
+      "fixed_departures": [0, 30, 50],
+      "shuttle_service": []
+    },
+    {
+      "hour": 14,
+      "fixed_departures": [10, 30, 50],
+      "shuttle_service": []
+    },
+    {
+      "hour": 15,
+      "fixed_departures": [30, 50],
+      "shuttle_service": [
+        {
+          "start": "15:00",
+          "end": "15:30",
+          "description": "シャトル運行（満車になり次第出発）"
+        }
+      ]
+    },
+    {
+      "hour": 16,
+      "fixed_departures": [20, 40],
+      "shuttle_service": [
+        {
+          "start": "16:50",
+          "end": "17:00",
+          "description": "シャトル運行（満車になり次第出発）"
+        }
+      ]
+    },
+    {
+      "hour": 17,
+      "fixed_departures": [30, 50],
+      "shuttle_service": [
+        {
+          "start": "17:00",
+          "end": "17:30",
+          "description": "シャトル運行（満車になり次第出発）"
+        }
+      ]
+    },
+    {
+      "hour": 18,
+      "fixed_departures": [10, 30, 50],
+      "shuttle_service": []
+    },
+    {
+      "hour": 19,
+      "fixed_departures": [20],
+      "shuttle_service": [
+        {
+          "start": "19:00",
+          "end": "19:20",
+          "description": "シャトル運行（満車になり次第出発）"
+        }
+      ]
+    }
+  ]
+}

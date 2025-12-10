@@ -1,0 +1,323 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding: 20px;
+    color: #333;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+header {
+    text-align: center;
+    color: white;
+    margin-bottom: 30px;
+}
+
+header h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.subtitle {
+    font-size: 1.2em;
+    opacity: 0.9;
+}
+
+.route-switch {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.route-btn {
+    padding: 10px 25px;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 25px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-weight: bold;
+    backdrop-filter: blur(10px);
+}
+
+.route-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+    border-color: rgba(255, 255, 255, 0.5);
+}
+
+.route-btn.active {
+    background: white;
+    color: #667eea;
+    border-color: white;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.route-btn:active {
+    transform: scale(0.98);
+}
+
+.current-time {
+    background: white;
+    border-radius: 15px;
+    padding: 25px;
+    margin-bottom: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.time-display {
+    font-size: 3em;
+    font-weight: bold;
+    color: #667eea;
+    margin-bottom: 10px;
+    font-variant-numeric: tabular-nums;
+}
+
+.date-display {
+    font-size: 1.1em;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.time-controls {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 2px dashed #ddd;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.time-controls label {
+    font-size: 0.9em;
+    color: #666;
+    font-weight: bold;
+}
+
+.time-input {
+    font-size: 1.2em;
+    padding: 10px 15px;
+    border: 2px solid #667eea;
+    border-radius: 8px;
+    background: white;
+    color: #333;
+    font-family: inherit;
+    min-width: 150px;
+    text-align: center;
+}
+
+.time-input:focus {
+    outline: none;
+    border-color: #764ba2;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.reset-btn {
+    padding: 8px 20px;
+    background: #667eea;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 0.9em;
+    cursor: pointer;
+    transition: background 0.2s;
+    font-weight: bold;
+}
+
+.reset-btn:hover {
+    background: #764ba2;
+}
+
+.reset-btn:active {
+    transform: scale(0.98);
+}
+
+.next-bus {
+    background: white;
+    border-radius: 15px;
+    padding: 30px;
+    margin-bottom: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.next-bus-title {
+    font-size: 1.2em;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.next-bus-time {
+    font-size: 4em;
+    font-weight: bold;
+    color: #667eea;
+    margin-bottom: 15px;
+    font-variant-numeric: tabular-nums;
+}
+
+.next-bus-countdown {
+    font-size: 1.5em;
+    color: #764ba2;
+    margin-bottom: 10px;
+}
+
+.shuttle-badge {
+    display: inline-block;
+    background: #ff6b6b;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 0.9em;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.no-service {
+    font-size: 1.5em;
+    color: #999;
+    padding: 20px;
+}
+
+.status-info {
+    background: white;
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.status-info.active {
+    background: #fff3cd;
+    border-left: 5px solid #ffc107;
+}
+
+.status-info.shuttle {
+    background: #f8d7da;
+    border-left: 5px solid #dc3545;
+}
+
+.status-text {
+    font-size: 1.1em;
+    color: #333;
+    line-height: 1.6;
+}
+
+.today-schedule {
+    background: white;
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    max-height: 400px;
+    overflow-y: auto;
+    scroll-behavior: smooth;
+}
+
+/* スクロールバーのスタイル */
+.today-schedule::-webkit-scrollbar {
+    width: 8px;
+}
+
+.today-schedule::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+.today-schedule::-webkit-scrollbar-thumb {
+    background: #667eea;
+    border-radius: 10px;
+}
+
+.today-schedule::-webkit-scrollbar-thumb:hover {
+    background: #764ba2;
+}
+
+.today-schedule h2 {
+    font-size: 1.5em;
+    color: #667eea;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.schedule-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px;
+    margin-bottom: 8px;
+    border-radius: 8px;
+    transition: background 0.2s;
+}
+
+.schedule-item:hover {
+    background: #f5f5f5;
+}
+
+.schedule-item.past {
+    opacity: 0.5;
+}
+
+.schedule-item.next {
+    background: #e3f2fd;
+    font-weight: bold;
+}
+
+.schedule-time {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #333;
+    font-variant-numeric: tabular-nums;
+}
+
+.schedule-type {
+    font-size: 0.9em;
+    color: #666;
+}
+
+.shuttle-type {
+    color: #dc3545;
+    font-weight: bold;
+}
+
+.loading {
+    text-align: center;
+    color: #999;
+    font-size: 1.2em;
+}
+
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 2em;
+    }
+
+    .time-display {
+        font-size: 2em;
+    }
+
+    .next-bus-time {
+        font-size: 3em;
+    }
+
+    .schedule-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .schedule-time {
+        margin-bottom: 5px;
+    }
+}

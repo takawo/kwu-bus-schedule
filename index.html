@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>本山スクールバス 運行状況</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>🚌 本山スクールバス</h1>
+            <p class="subtitle" id="subtitle">のりば発 運行状況</p>
+            <div class="route-switch">
+                <button id="routeMotoyama" class="route-btn active">本山発</button>
+                <button id="routeUniversity" class="route-btn">大学発</button>
+            </div>
+        </header>
+
+        <div class="current-time">
+            <div class="time-display" id="currentTime"></div>
+            <div class="date-display" id="currentDate"></div>
+            <div class="time-controls">
+                <label for="customTime">時刻を設定:</label>
+                <input type="time" id="customTime" class="time-input">
+                <button id="resetTime" class="reset-btn">現在時刻に戻す</button>
+            </div>
+        </div>
+
+        <div class="next-bus" id="nextBus">
+            <div class="loading">読み込み中...</div>
+        </div>
+
+        <div class="status-info" id="statusInfo"></div>
+
+        <div class="today-schedule">
+            <h2>今日の運行ダイヤ</h2>
+            <div id="todaySchedule"></div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
