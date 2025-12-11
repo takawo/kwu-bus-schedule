@@ -93,22 +93,36 @@ header h1 {
     margin-bottom: 20px;
 }
 
-.time-controls {
+.date-controls {
     margin-top: 20px;
     padding-top: 20px;
     border-top: 2px dashed #ddd;
-    display: flex;
+    display: none;
+    /* デフォルトで非表示、デバッグモード時にJavaScriptで表示 */
     flex-direction: column;
     align-items: center;
     gap: 10px;
 }
 
+.time-controls {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 2px dashed #ddd;
+    display: none;
+    /* デフォルトで非表示、デバッグモード時にJavaScriptで表示 */
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.date-controls label,
 .time-controls label {
     font-size: 0.9em;
     color: #666;
     font-weight: bold;
 }
 
+.date-input,
 .time-input {
     font-size: 1.2em;
     padding: 10px 15px;
@@ -121,6 +135,7 @@ header h1 {
     text-align: center;
 }
 
+.date-input:focus,
 .time-input:focus {
     outline: none;
     border-color: #764ba2;
@@ -245,9 +260,35 @@ header h1 {
 .schedule-header {
     font-size: 1.5em;
     color: #667eea;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     text-align: center;
     flex-shrink: 0;
+}
+
+.schedule-type-badge {
+    text-align: center;
+    margin-bottom: 20px;
+    flex-shrink: 0;
+}
+
+.schedule-type-badge.special {
+    display: inline-block;
+    background: #9c27b0;
+    color: white;
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-size: 0.9em;
+    font-weight: bold;
+}
+
+.schedule-type-badge.saturday {
+    display: inline-block;
+    background: #e91e63;
+    color: white;
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-size: 0.9em;
+    font-weight: bold;
 }
 
 .schedule-content {
