@@ -1,0 +1,91 @@
+{
+  "title": "大学発本山スクールバス乗り場着 特別ダイヤ",
+  "note": "「▸」記号はシャトル運行（満車になり次第出発）を示します",
+  "schedule": [
+    {
+      "hour": 8,
+      "fixed_departures": [],
+      "shuttle_service": []
+    },
+    {
+      "hour": 9,
+      "fixed_departures": [
+        0,
+        30
+      ],
+      "shuttle_service": []
+    },
+    {
+      "hour": 10,
+      "fixed_departures": [
+        0,
+        30
+      ],
+      "shuttle_service": []
+    },
+    {
+      "hour": 11,
+      "fixed_departures": [
+        0
+      ],
+      "shuttle_service": []
+    },
+    {
+      "hour": 12,
+      "fixed_departures": [
+        0,
+        30
+      ],
+      "shuttle_service": []
+    },
+    {
+      "hour": 13,
+      "fixed_departures": [
+        0,
+        30
+      ],
+      "shuttle_service": []
+    },
+    {
+      "hour": 14,
+      "fixed_departures": [
+        0,
+        30
+      ],
+      "shuttle_service": []
+    },
+    {
+      "hour": 15,
+      "fixed_departures": [
+        0,
+        30
+      ],
+      "shuttle_service": []
+    },
+    {
+      "hour": 16,
+      "fixed_departures": [
+        10,
+        40
+      ],
+      "shuttle_service": []
+    },
+    {
+      "hour": 17,
+      "fixed_departures": [
+        10,
+        30
+      ],
+      "shuttle_service": []
+    },
+    {
+      "hour": 18,
+      "fixed_departures": [
+        10,
+        30
+      ],
+      "shuttle_service": []
+    }
+  ]
+}
+

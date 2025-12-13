@@ -1,0 +1,49 @@
+{
+  "title": "大学発本山スクールバス乗り場着 土曜日ダイヤ",
+  "note": "3～5月のみ運行（但し第2土曜日及び祝日は運休）",
+  "schedule": [
+    {
+      "hour": 8,
+      "fixed_departures": [],
+      "shuttle_service": []
+    },
+    {
+      "hour": 9,
+      "fixed_departures": [
+        0,
+        30
+      ],
+      "shuttle_service": []
+    },
+    {
+      "hour": 10,
+      "fixed_departures": [
+        30
+      ],
+      "shuttle_service": []
+    },
+    {
+      "hour": 11,
+      "fixed_departures": [
+        30
+      ],
+      "shuttle_service": []
+    },
+    {
+      "hour": 12,
+      "fixed_departures": [
+        30
+      ],
+      "shuttle_service": []
+    },
+    {
+      "hour": 13,
+      "fixed_departures": [
+        10,
+        30
+      ],
+      "shuttle_service": []
+    }
+  ]
+}
+

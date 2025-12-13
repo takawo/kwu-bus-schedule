@@ -1,0 +1,49 @@
+{
+  "title": "本山スクールバスのりば発 土曜日ダイヤ",
+  "note": "3～5月のみ運行（但し第2土曜日及び祝日は運休）",
+  "schedule": [
+    {
+      "hour": 8,
+      "fixed_departures": [
+        30,
+        45
+      ],
+      "shuttle_service": []
+    },
+    {
+      "hour": 9,
+      "fixed_departures": [
+        10,
+        40
+      ],
+      "shuttle_service": []
+    },
+    {
+      "hour": 10,
+      "fixed_departures": [
+        40
+      ],
+      "shuttle_service": []
+    },
+    {
+      "hour": 11,
+      "fixed_departures": [
+        40
+      ],
+      "shuttle_service": []
+    },
+    {
+      "hour": 12,
+      "fixed_departures": [
+        40
+      ],
+      "shuttle_service": []
+    },
+    {
+      "hour": 13,
+      "fixed_departures": [],
+      "shuttle_service": []
+    }
+  ]
+}
+
